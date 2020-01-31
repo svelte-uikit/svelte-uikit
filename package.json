@@ -8,7 +8,7 @@
     "start": "start-storybook -p 6006 -s public",
     "storybook:build": "build-storybook -s public -o docs",
     "storybook:serve": "cd docs && servor && cd ..",
-    "format": "prettier --write \"{,!(node_modules|docs)/**/}*.{js,md,mdx,svelte}\"",
+    "format": "prettier --write \"{,!(docs|dist)/**/}*.{js,md,mdx,svelte}\"",
     "lint": "eslint --fix --ext .js,.svelte src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
