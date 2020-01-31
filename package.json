@@ -71,11 +71,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,html,json,md,mdx,yaml,yml}": [
+    "{,!(docs|dist)/**/}*.{js,html,json,md,mdx,yaml,yml}": [
       "prettier --write",
       "git add"
     ],
-    "*.{js,svelte}": [
+    "{,!(docs|dist)/**/}*.{js,svelte}": [
       "eslint --fix",
       "git add"
     ]
