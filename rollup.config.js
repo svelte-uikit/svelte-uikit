@@ -8,19 +8,19 @@ import pkg from './package.json';
 
 const production = !process.env.ROLLUP_WATCH;
 
-const { name } = pkg;
+const { name, main: umd, module: es } = pkg;
 
 export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/module.js',
+      file: es,
       format: 'es',
       sourcemap: true,
       name,
     },
     {
-      file: 'dist/index.js',
+      file: umd,
       format: 'umd',
       sourcemap: true,
       name,

@@ -2,12 +2,10 @@
   "name": "svelte-uikit",
   "version": "0.0.1",
   "description": "UIkit components built with Svelte.",
-  "module": "module.js",
-  "main": "index.js",
+  "module": "dist/module.js",
+  "main": "dist/index.js",
   "files": [
-    "dist/*",
-    "!/**/guide",
-    "!/**/stories"
+    "dist/*"
   ],
   "scripts": {
     "commit": "git-cz",
