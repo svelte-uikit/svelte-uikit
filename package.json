@@ -50,6 +50,7 @@
     "@storybook/svelte": "^5.3.9",
     "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/svelte": "^1.11.0",
+    "autoprefixer": "^9.7.4",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
@@ -76,7 +77,8 @@
     "rollup-plugin-terser": "^5.2.0",
     "servor": "^3.1.0",
     "svelte": "^3.18.1",
-    "svelte-loader": "^2.13.6"
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^3.3.1"
   },
   "peerDependencies": {
     "svelte": "^3.0.0"
