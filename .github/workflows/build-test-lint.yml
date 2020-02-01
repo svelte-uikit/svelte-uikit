@@ -1,4 +1,4 @@
-name: 'Angular'
+name: 'Build, test and lint'
 on:
   push:
     branches:
