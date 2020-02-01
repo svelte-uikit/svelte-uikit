@@ -15,5 +15,5 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
-      - run: yarn && yarn build && yarn test && yarn lint
+          node-version: '12.x'
+      - run: npm install && npm run build && npm run test && npm run lint
