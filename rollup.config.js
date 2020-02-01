@@ -28,9 +28,7 @@ export default {
   ],
   plugins: [
     svelte({
-      // enable run-time checks when not in production
       dev: !production,
-      // generate: production ? 'dom' : 'ssr',
       hydratable: true,
 
       preprocess: autoPreprocess({
@@ -45,7 +43,6 @@ export default {
 
     production && terser(),
 
-    // production && analyze(),
     production && bundleSize(),
   ],
   watch: {
