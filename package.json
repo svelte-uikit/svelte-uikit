@@ -2,12 +2,18 @@
   "name": "svelte-uikit",
   "version": "0.0.1",
   "description": "UIkit components built with Svelte.",
-  "main": "index.js",
+  "module": "dist/module.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "commit": "git-cz",
     "start": "start-storybook -p 6006 -s public",
     "storybook:build": "build-storybook -s public -o docs",
     "storybook:serve": "servor docs",
+    "build": "rimraf dist && rollup -c",
+    "build:watch": "rollup -c -w",
     "format": "prettier --write \"{,!(docs|dist)/**/}*.{js,md,mdx,svelte}\"",
     "lint": "eslint --fix --ext .js,.svelte src/",
     "test": "jest",
@@ -44,6 +50,7 @@
     "@storybook/svelte": "^5.3.9",
     "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/svelte": "^1.11.0",
+    "autoprefixer": "^9.7.4",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
@@ -61,9 +68,17 @@
     "prettier-plugin-svelte": "^0.7.0",
     "react": "^16.12.0",
     "react-is": "^16.12.0",
+    "rimraf": "^3.0.1",
+    "rollup": "^1.31.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
     "servor": "^3.1.0",
     "svelte": "^3.18.1",
-    "svelte-loader": "^2.13.6"
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^3.3.1"
   },
   "peerDependencies": {
     "svelte": "^3.0.0"
