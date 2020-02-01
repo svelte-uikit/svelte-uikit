@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ardenivanov.svelte-intellisense",
+    "bierner.lit-html",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "fivethree.vscode-svelte-snippets",
+    "jamesbirtles.svelte-vscode",
+    "silvenon.mdx"
+  ]
+}

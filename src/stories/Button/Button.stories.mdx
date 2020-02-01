@@ -1,0 +1,33 @@
+import { Meta, Source, Story } from '@storybook/addon-docs/blocks';
+import { Button } from 'svelte-uikit';
+import Styles from './Styles.svelte';
+import srcStyles from '!!raw-loader!./Styles.svelte';
+import HandleClicks from './HandleClicks.svelte';
+import srcHandleClicks from '!!raw-loader!./HandleClicks.svelte';
+import { storyOf } from '../../utils';
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+UIkit buttons are converted to Svelte components for convenience.
+
+## Usage
+
+Just import `Button` from the library and bind a click handler directly to it.
+
+<Story name="Usage">{storyOf(HandleClicks)}</Story>
+
+The component has a slot, so anything in it will be displayed inside the `<button>` element.
+
+<Source code={srcHandleClicks} language="html" />
+
+## Styles/Modes
+
+The `Button` component takes a property called `mode` to display different styles. Default value is, well, `default`. 😅
+
+<Story name="Styles">{storyOf(Styles)}</Story>
+
+The property is not called `style`, because css styles are passed directly to the `<button>` element.
+
+<Source code={srcStyles} language="html" />

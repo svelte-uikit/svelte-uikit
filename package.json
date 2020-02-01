@@ -1,10 +1,19 @@
 {
   "name": "svelte-uikit",
   "version": "0.0.1",
-  "description": "",
+  "description": "UIkit components built with Svelte.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "git-cz",
+    "start": "start-storybook -p 6006 -s public",
+    "storybook:build": "build-storybook -s public -o docs",
+    "storybook:serve": "servor docs",
+    "format": "prettier --write \"{,!(docs|dist)/**/}*.{js,md,mdx,svelte}\"",
+    "lint": "eslint --fix --ext .js,.svelte src/",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:serve": "servor coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +24,70 @@
   "bugs": {
     "url": "https://github.com/svelte-uikit/svelte-uikit/issues"
   },
-  "homepage": "https://github.com/svelte-uikit/svelte-uikit#readme"
+  "homepage": "https://github.com/svelte-uikit/svelte-uikit#readme",
+  "keywords": [
+    "svelte",
+    "uikit",
+    "components"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@storybook/addon-actions": "^5.3.9",
+    "@storybook/addon-docs": "^5.3.9",
+    "@storybook/addon-knobs": "^5.3.9",
+    "@storybook/addon-links": "^5.3.9",
+    "@storybook/addons": "^5.3.9",
+    "@storybook/svelte": "^5.3.9",
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/svelte": "^1.11.0",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "husky": "^4.2.1",
+    "jest": "^25.1.0",
+    "jest-transform-svelte": "^2.1.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "prettier-plugin-svelte": "^0.7.0",
+    "react": "^16.12.0",
+    "react-is": "^16.12.0",
+    "servor": "^3.1.0",
+    "svelte": "^3.18.1",
+    "svelte-loader": "^2.13.6"
+  },
+  "peerDependencies": {
+    "svelte": "^3.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "{,!(docs|dist)/**/}*.{js,html,json,md,mdx,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ],
+    "{,!(docs|dist)/**/}*.{js,svelte}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
