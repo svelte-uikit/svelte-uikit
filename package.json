@@ -76,7 +76,7 @@
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "servor": "^3.1.0",
-    "svelte": "^3.18.1",
+    "svelte": "^4.2.19",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^3.3.1"
   },
